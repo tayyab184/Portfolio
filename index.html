@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Basic page settings -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <!-- Browser tab title aur Google search description (SEO) -->
+  <title>Tayyab Sultan | Software Engineering Portfolio</title>
+  <meta name="description" content="Portfolio of Tayyab Sultan, a Software Engineering student with experience in web development, SAP-based inventory management, Excel automation and technical operations.">
+
+  <!-- Google Fonts: Inter (body text) aur Oswald (headings) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome: icons ke liye (internet chahiye) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Hamari apni CSS file -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- 3D background ka container (JS is mein Spline viewer daalta hai) -->
+  <div id="sp" aria-hidden="true"></div>
+
+
+  <!-- =================================================================
+       HEADER / NAVIGATION BAR
+       ================================================================= -->
+  <header id="hd">
+    <div class="wrap">
+      <nav aria-label="Main">
+
+        <!-- Logo aur naam -->
+        <a href="#home" class="brand">
+          <span class="logo">TS</span>Tayyab Sultan
+        </a>
+
+        <!-- Mobile menu button (sirf chhoti screen par dikhta hai) -->
+        <button class="burger" id="bg" aria-label="Toggle menu" aria-expanded="false">
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Menu links -->
+        <ul class="links" id="lk">
+          <li><a href="#home">HOME</a></li>
+          <li><a href="#about">ABOUT</a></li>
+          <li><a href="#services">SERVICES</a></li>
+          <li><a href="#skills">SKILLS</a></li>
+          <li><a href="#experience">EXPERIENCE</a></li>
+          <li><a href="#contact">CONTACT</a></li>
+        </ul>
+
+      </nav>
+    </div>
+  </header>
+
+
+  <main>
+
+    <!-- =================================================================
+         HOME / HERO SECTION
+         ================================================================= -->
+    <section id="home" style="padding:0">
+
+      <!-- Peeche halki green glow (sirf decoration) -->
+      <div class="glow" style="right:-100px;top:0"></div>
+
+      <div class="wrap hero">
+
+        <!-- Left side: intro text aur buttons -->
+        <div>
+          <p class="i">Hello, I'm</p>
+          <h1 class="n">Tayyab Sultan</h1>
+
+          <p class="d">Software Engineering student with experience in web development, SAP-based inventory management, Excel automation and technical operations.</p>
+
+          <div class="btns">
+            <a class="btn" href="#services">Explore My Portfolio</a>
+            <a class="btn o" href="#contact">Contact Me</a>
+          </div>
+        </div>
+
+        <!-- Right side: gol photo (images/profile.jpg) with circles -->
+        <div class="vis">
+          <div class="c2"></div>
+          <div class="c1"></div>
+          <div class="ph">
+            <img src="images/profile.jpg" alt="Portrait of Tayyab Sultan wearing sunglasses and a dark blazer">
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =================================================================
+         ABOUT SECTION
+         ================================================================= -->
+    <section id="about">
+      <div class="wrap ab">
+
+        <!-- Left side: gol photo with green ring -->
+        <div class="vw rv">
+          <div class="ring"></div>
+          <div class="ph">
+            <img src="images/profile2.jpg" alt="Tayyab Sultan seated at a table with a laptop" loading="lazy" style="object-position:42% 28%">
+          </div>
+        </div>
+
+        <!-- Right side: about text -->
+        <div class="rv">
+          <h2>ABOUT <span>ME</span></h2>
+          <p class="aboutText">Currently pursuing a Bachelor's degree in Software Engineering (7th Semester), with practical 
+             experience as an Assistant Store Keeper. Bringing a technical background, attention to detail, 
+             and organizational skills to support efficient warehouse and inventory operations.</p>
+          <a class="btn" href="#experience">Learn More</a>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =================================================================
+         SERVICES SECTION (3 cards)
+         ================================================================= -->
+    <section id="services" style="background:rgba(10,10,10,.55)">
+      <div class="wrap">
+        <h2 class="rv">MY <span>SERVICES</span></h2>
+
+        <div class="grid g3">
+
+          <!-- Service 1 -->
+          <article class="card rv">
+            <div class="ic"><i class="fas fa-code"></i></div>
+            <h3>Web Development</h3>
+            <p>Building modern, responsive and user-friendly websites with clean and professional interfaces.</p>
+            <a class="btn sm" href="#contact">Learn More</a>
+          </article>
+
+          <!-- Service 2 -->
+          <article class="card rv">
+            <div class="ic"><i class="fas fa-pen-ruler"></i></div>
+            <h3>UI / UX Design</h3>
+            <p>Creating clean and visually engaging user interfaces focused on usability and modern design principles.</p>
+            <a class="btn sm" href="#contact">Learn More</a>
+          </article>
+
+          <!-- Service 3 -->
+          <article class="card rv">
+            <div class="ic"><i class="fas fa-boxes-stacked"></i></div>
+            <h3>Inventory &amp; SAP Solutions</h3>
+            <p>Managing digital inventory systems, SAP-based workflows, stock records and reporting processes.</p>
+            <a class="btn sm" href="#contact">Learn More</a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =================================================================
+         SKILLS SECTION (7 cards)
+         ================================================================= -->
+    <section id="skills">
+      <div class="wrap">
+        <h2 class="rv">MY <span>SKILLS</span></h2>
+
+        <div class="grid g4">
+
+          <div class="card sk rv">
+            <div class="ic"><i class="fas fa-database"></i></div>
+            <h3>SAP Software</h3>
+          </div>
+
+          <div class="card sk rv">
+            <div class="ic"><i class="fas fa-globe"></i></div>
+            <h3>Web Development</h3>
+          </div>
+
+          <div class="card sk rv">
+            <div class="ic"><i class="fas fa-palette"></i></div>
+            <h3>Adobe Photoshop</h3>
+          </div>
+
+          <div class="card sk rv">
+            <div class="ic"><i class="fas fa-file-word"></i></div>
+            <h3>Microsoft Word</h3>
+          </div>
+
+          <div class="card sk rv">
+            <div class="ic"><i class="fas fa-file-excel"></i></div>
+            <h3>Microsoft Excel</h3>
+          </div>
+
+          <div class="card sk rv">
+            <div class="ic"><i class="fas fa-file-powerpoint"></i></div>
+            <h3>Microsoft PowerPoint</h3>
+          </div>
+
+          <div class="card sk rv">
+            <div class="ic"><i class="fas fa-users"></i></div>
+            <h3>Leadership</h3>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =================================================================
+         PROFESSIONAL EXPERIENCE (Timeline)
+         ================================================================= -->
+    <section id="experience" style="background:rgba(10,10,10,.55)">
+      <div class="wrap">
+        <h2 class="rv">PROFESSIONAL <span>EXPERIENCE</span></h2>
+
+        <div class="tl">
+
+          <!-- Job 1: Current job -->
+          <div class="it card rv">
+            <h3>Store Keeper</h3>
+            <div class="co">OMBRE HOLDING PVT LTD</div>
+            <div class="du">2024 – Present</div>
+            <ul>
+              <li>Manage digital inventory using SAP-based systems.</li>
+              <li>Managing inventory records and ensuring timely stock updates.</li>
+              <li>Assist in improving database and reporting workflows through Excel automation.</li>
+            </ul>
+          </div>
+
+          <!-- Job 2: Previous job -->
+          <div class="it card rv">
+            <h3>Assistant Technician</h3>
+            <div class="co">Sapphire Textile Mills Ltd</div>
+            <div class="du">2022 – 2024</div>
+            <ul>
+              <li>Assisted in maintenance of weaving unit machinery.</li>
+              <li>Coordinated fault reporting and basic troubleshooting.</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =================================================================
+         EDUCATION SECTION (3 cards)
+         ================================================================= -->
+    <section id="education" class="edu">
+      <div class="wrap">
+        <h2 class="rv"><span>EDUCATION</span></h2>
+
+        <div class="grid g3">
+
+          <div class="card rv">
+            <div class="ic"><i class="fas fa-graduation-cap"></i></div>
+            <h3>BS Software Engineering</h3>
+            <p>Virtual University of Pakistan<br><span class="y">2023 – 2027</span> · 7th Semester</p>
+          </div>
+
+          <div class="card rv">
+            <div class="ic"><i class="fas fa-atom"></i></div>
+            <h3>FSC Pre-Engineering</h3>
+            <p>Ideal Group of Colleges<br><span class="y">2019 – 2020</span></p>
+          </div>
+
+          <div class="card rv">
+            <div class="ic"><i class="fas fa-flask"></i></div>
+            <h3>Matriculation in Science</h3>
+            <p>Muslim Model High School<br><span class="y">2017 – 2018</span></p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =================================================================
+         LANGUAGES SECTION (3 cards)
+         ================================================================= -->
+    <!-- <section id="languages" style="background:rgba(10,10,10,.55)">
+      <div class="wrap">
+        <h2 class="rv"><span>LANGUAGES</span></h2>
+
+        <div class="grid g3">
+
+          <div class="card sk rv">
+            <div class="ic"><i class="fas fa-language"></i></div>
+            <h3>English</h3>
+          </div>
+
+          <div class="card sk rv">
+            <div class="ic"><i class="fas fa-language"></i></div>
+            <h3>Urdu</h3>
+          </div>
+
+          <div class="card sk rv">
+            <div class="ic"><i class="fas fa-language"></i></div>
+            <h3>Punjabi</h3>
+          </div>
+
+        </div>
+      </div>
+    </section> -->
+
+
+    <!-- =================================================================
+         CONTACT SECTION (contact info + form)
+         ================================================================= -->
+    <section id="contact">
+      <div class="wrap">
+        <h2 class="rv">LET'S WORK <span>TOGETHER</span></h2>
+
+        <div class="ct">
+
+          <!-- Left side: contact details -->
+          <div class="rv">
+
+            <!-- Email -->
+            <div class="cl">
+              <div class="ic"><i class="fas fa-envelope"></i></div>
+              <div>
+                <b>Email</b>
+                <a href="mailto:mtayyabsultan@gmail.com">mtayyabsultan@gmail.com</a>
+              </div>
+            </div>
+
+            <!-- Phone -->
+            <div class="cl">
+              <div class="ic"><i class="fas fa-phone"></i></div>
+              <div>
+                <b>Phone</b>
+                <a href="tel:+923090310026">+92 3090310026</a>
+              </div>
+            </div>
+
+            <!-- Location -->
+            <div class="cl">
+              <div class="ic"><i class="fas fa-location-dot"></i></div>
+              <div>
+                <b>Location</b>
+                Sangla Hill, Pakistan
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Right side: contact form
+               Web3Forms se email aata hai. JS (script.js) isay background mein submit karti hai -->
+          <form id="cf" class="rv" action="https://api.web3forms.com/submit" method="POST" novalidate>
+
+            <!-- Hidden fields: Web3Forms ki settings (inhein change mat karna) -->
+            <input type="hidden" name="access_key" value="ed978ee4-b290-44f0-9f89-0f8334485f84">
+            <input type="hidden" name="subject" value="New message from your portfolio website">
+            <input type="hidden" name="from_name" value="Portfolio Contact Form">
+
+            <!-- Spam bot trap (insaan ko nazar nahi aata) -->
+            <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none">
+
+            <!-- Visitor ke fields -->
+            <input type="text" name="name" placeholder="Name" aria-label="Name" required>
+            <input type="email" name="email" placeholder="Email" aria-label="Email" required>
+            <textarea name="message" rows="5" placeholder="Message" aria-label="Message" required></textarea>
+
+            <button class="btn" type="submit">Send Message</button>
+
+            <!-- Status message (Sending... / Thank you!) yahan dikhta hai -->
+            <div id="fm" role="status"></div>
+          </form>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- =================================================================
+       FOOTER
+       ================================================================= -->
+  <footer>
+    <div class="wrap">
+      <span class="logo">TS</span>
+      <h3 style="font-size:1.4rem">Tayyab Sultan</h3>
+      <p>Software Engineering | Web Development | Technology</p>
+
+      <!-- Footer menu -->
+      <ul>
+        <li><a href="#home">HOME</a></li>
+        <li><a href="#about">ABOUT</a></li>
+        <li><a href="#services">SERVICES</a></li>
+        <li><a href="#skills">SKILLS</a></li>
+        <li><a href="#experience">EXPERIENCE</a></li>
+        <li><a href="#contact">CONTACT</a></li>
+      </ul>
+
+      <!-- Saal (year) JS se automatically bharta hai -->
+      <p class="cp">© <span id="yr"></span> Tayyab Sultan. All rights reserved.</p>
+    </div>
+  </footer>
+
+
+  <!-- Hamari apni JavaScript file (hamesha </body> se pehle) -->
+  <script src="js/script.js"></script>
+
+</body>
+
+</html>

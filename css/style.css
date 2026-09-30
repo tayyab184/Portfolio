@@ -1,0 +1,884 @@
+/* =====================================================================
+   TAYYAB SULTAN - PORTFOLIO STYLESHEET
+   Note: Rules ka order important hai (neeche wali rule upar wali ko
+   override kar sakti hai), is liye order change mat karna.
+   ===================================================================== */
+
+
+/* ---------------------------------------------------------------------
+   1. VARIABLES (colors yahan se change karo, poori site mein badal jayenge)
+   --------------------------------------------------------------------- */
+:root {
+  --g: #00F66F;                   /* Main green (accent) color */
+  --bg: #2e6d5da4;                  /* Page background (dark) */
+  --card: rgba(21, 21, 21, .78);  /* Cards / inputs ka background */
+  --mut: #BDBDBD;                 /* Muted (halka grey) text */
+}
+
+
+/* ---------------------------------------------------------------------
+   2. RESET & BASE STYLES
+   --------------------------------------------------------------------- */
+
+/* Sab elements ka default margin/padding hata do */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Menu link click par smooth scroll; sticky header ke liye 80px gap */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  background: var(--bg);
+  color: #fff;
+  font-family: Inter, sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;  /* Horizontal scroll band */
+}
+
+/* Headings aur logo ke liye Oswald font (uppercase) */
+h1,
+h2,
+h3,
+.logo {
+  font-family: Oswald, sans-serif;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* About-Text */
+.aboutText{
+  text-align: justify;
+}
+
+
+/* Content ko center mein rakhne wala container (max 1200px) */
+.wrap {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 24px;
+}
+
+/* Har section ki spacing */
+section {
+  padding: 96px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Section titles (h2) - span wala hissa green hota hai */
+h2 {
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  margin-bottom: 48px;
+}
+
+h2 span,
+.g {
+  color: var(--g);
+}
+
+/* Keyboard se navigate karte waqt green outline dikhao (accessibility) */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--g);
+  outline-offset: 3px;
+}
+
+
+/* ---------------------------------------------------------------------
+   3. BUTTONS
+   --------------------------------------------------------------------- */
+
+/* Default (green filled) button */
+.btn {
+  display: inline-block;
+  padding: 14px 30px;
+  border-radius: 50px;
+  font-weight: 600;
+  border: 2px solid var(--g);
+  background: var(--g);
+  color: #000;
+  transition: .3s;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.btn:hover {
+  box-shadow: 0 0 28px rgba(0, 246, 111, .55);
+  transform: translateY(-3px);
+}
+
+/* Outline button (Contact Me) */
+.btn.o {
+  background: transparent;
+  color: #fff;
+  border-color: #444;
+}
+
+.btn.o:hover {
+  border-color: var(--g);
+  color: var(--g);
+}
+
+/* Small button (Services cards ke andar) */
+.btn.sm {
+  padding: 9px 22px;
+  font-size: .9rem;
+}
+
+
+/* ---------------------------------------------------------------------
+   4. HEADER & NAVIGATION
+   --------------------------------------------------------------------- */
+
+/* Sticky header - scroll par upar chipka rehta hai */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(13, 13, 13, .6);
+  backdrop-filter: blur(12px);
+  transition: .3s;
+}
+
+/* Scroll karne par JS "s" class add karta hai (darker background + glow) */
+header.s {
+  background: rgba(13, 13, 13, .95);
+  box-shadow: 0 2px 20px rgba(0, 246, 111, .12);
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+
+/* Left side: logo + naam */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+/* "TS" gol logo */
+.logo {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--g);
+  color: #000;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+}
+
+/* Menu links (HOME, ABOUT, ...) */
+.links {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  font-size: .85rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.links a {
+  padding: 6px 0;
+  border-bottom: 2px solid transparent;
+  transition: .3s;
+}
+
+.links a:hover {
+  color: var(--g);
+  border-color: var(--g);
+}
+
+/* Mobile menu button (desktop par hidden, mobile par show hota hai) */
+.burger {
+  display: none;
+  background: none;
+  border: 0;
+  color: #fff;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+
+/* ---------------------------------------------------------------------
+   5. HERO SECTION (Home)
+   --------------------------------------------------------------------- */
+
+/* Do columns: left text, right photo */
+.hero {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  min-height: calc(100vh - 72px);  /* Poori screen ki height minus header */
+  padding: 60px 0;
+}
+
+.hero h1 {
+  font-size: clamp(3rem, 8vw, 6.2rem);
+}
+
+/* Naam (Tayyab Sultan) - green + glow */
+.hero h1.n {
+  color: var(--g);
+  text-shadow: 0 0 40px rgba(0, 246, 111, .35);
+}
+
+/* "Hello, I'm" line */
+.hero p.i {
+  font-size: 1.4rem;
+  margin-bottom: 8px;
+}
+
+/* Choti description */
+.hero p.d {
+  color: var(--mut);
+  max-width: 520px;
+  margin: 24px 0 32px;
+  font-size: 1.1rem;
+}
+
+/* Buttons ki row */
+.btns {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* Photo ka container (gol circles + photo) */
+.vis {
+  position: relative;
+  width: min(100%, 500px);
+  aspect-ratio: 1;
+  margin: auto;
+}
+
+.vis .c1,
+.vis .c2 {
+  position: absolute;
+  border-radius: 50%;
+}
+
+/* Safed (white) gol circle - upar neeche float karta hai */
+.vis .c2 {
+  inset: -4% 10% 14% -6%;
+  background: #eee;
+  opacity: .92;
+  animation: fl 7s ease-in-out infinite;
+}
+
+/* Green gol circle with glow - ulti direction mein float karta hai */
+.vis .c1 {
+  inset: 6% -4% -4% 8%;
+  background: var(--g);
+  box-shadow: 0 0 90px rgba(0, 246, 111, .4);
+  animation: fl 8s ease-in-out infinite reverse;
+}
+
+/* Gol photo frame (reveal animation ke sath) */
+.vis .ph {
+  position: absolute;
+  inset: 4%;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 6px solid #0d0d0d;
+  animation: rev 1.2s ease both;
+}
+
+/* Photo image (Hero aur About dono ke liye) */
+.ph img,
+.ab .ph img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 45% 30%;  /* Photo ka kaunsa hissa dikhana hai */
+  display: block;
+}
+
+/* Animation: 14px upar-neeche float */
+@keyframes fl {
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+/* Animation: photo gol circle se khulti hai (reveal) */
+@keyframes rev {
+  from {
+    clip-path: circle(0);
+    opacity: 0;
+  }
+  to {
+    clip-path: circle(75%);
+    opacity: 1;
+  }
+}
+
+/* Hero ke peeche halki green glow */
+.glow {
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 246, 111, .14), transparent 70%);
+  z-index: -1;
+}
+
+
+/* ---------------------------------------------------------------------
+   6. ABOUT SECTION
+   --------------------------------------------------------------------- */
+
+/* Do columns: left photo, right text */
+.ab {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 64px;
+  align-items: center;
+}
+
+/* Photo wrapper */
+.ab .vw {
+  position: relative;
+  width: min(100%, 380px);
+  aspect-ratio: .85;
+  margin: auto;
+}
+
+/* Photo ke ird gird tirchi green ring */
+.ab .ring {
+  position: absolute;
+  inset: -6%;
+  border: 3px solid var(--g);
+  border-radius: 50%;
+  transform: rotate(-18deg) scaleX(1.05);
+  box-shadow: 0 0 30px rgba(0, 246, 111, .3);
+}
+
+.ab .ph {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.ab p {
+  color: var(--mut);
+  font-size: 1.15rem;
+  margin-bottom: 32px;
+}
+
+
+/* ---------------------------------------------------------------------
+   7. CARDS & GRIDS (Services, Skills, Education, Languages)
+   --------------------------------------------------------------------- */
+
+.grid {
+  display: grid;
+  gap: 24px;
+}
+
+/* g3 = 3 columns, g4 = 4 columns */
+.g3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.g4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* Card design */
+.card {
+  background: var(--card);
+  border: 1px solid #262626;
+  border-radius: 20px;
+  padding: 32px;
+  transition: .35s;
+}
+
+/* Hover par card upar uthta hai aur green border aata hai */
+.card:hover {
+  transform: translateY(-8px);
+  border-color: var(--g);
+  box-shadow: 0 12px 40px rgba(0, 246, 111, .15);
+}
+
+/* Icon ka gol green box */
+.ic {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--g);
+  color: #000;
+  display: grid;
+  place-items: center;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+}
+
+.card p {
+  color: var(--mut);
+  margin-bottom: 24px;
+}
+
+/* Skill cards (chote, center aligned, outline icon) */
+.sk {
+  text-align: center;
+  padding: 28px 16px;
+}
+
+.sk .ic {
+  margin: 0 auto 14px;
+  width: 56px;
+  height: 56px;
+  background: transparent;
+  color: var(--g);
+  border: 2px solid var(--g);
+}
+
+.sk h3 {
+  font-size: 1.05rem;
+  margin: 0;
+}
+
+
+/* ---------------------------------------------------------------------
+   8. EXPERIENCE (Timeline)
+   --------------------------------------------------------------------- */
+
+/* Left side ki vertical green line */
+.tl {
+  position: relative;
+  padding-left: 40px;
+  border-left: 2px solid var(--g);
+  margin-left: 8px;
+  box-shadow: -6px 0 20px -10px var(--g);
+}
+
+.tl .it {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+/* Har item ke saath line par pulse karta hua green dot */
+.tl .it::before {
+  content: "";
+  position: absolute;
+  left: -49px;
+  top: 28px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--g);
+  box-shadow: 0 0 0 6px rgba(0, 246, 111, .2);
+  animation: pu 2s infinite;
+}
+
+/* Animation: dot ke ird gird glow phailta hai */
+@keyframes pu {
+  50% {
+    box-shadow: 0 0 0 12px rgba(0, 246, 111, 0);
+  }
+}
+
+.it h3 {
+  font-size: 1.6rem;
+}
+
+/* Company ka naam */
+.it .co {
+  color: var(--g);
+  font-weight: 600;
+}
+
+/* Duration (2024 - Present) */
+.it .du {
+  color: var(--mut);
+  font-size: .9rem;
+  margin-bottom: 12px;
+}
+
+.it ul {
+  color: var(--mut);
+  padding-left: 20px;
+}
+
+
+/* ---------------------------------------------------------------------
+   9. EDUCATION
+   --------------------------------------------------------------------- */
+
+.edu .card h3 {
+  font-size: 1.25rem;
+}
+
+.edu .card p {
+  margin: 0;
+  font-size: .95rem;
+}
+
+/* Saal (year) green colour mein */
+.edu .y {
+  color: var(--g);
+  font-weight: 600;
+}
+
+
+/* ---------------------------------------------------------------------
+   10. PROGRESS BARS
+   (Abhi HTML mein use nahi ho rahi, future ke liye rakhi hain)
+   --------------------------------------------------------------------- */
+
+.bar {
+  margin-bottom: 24px;
+}
+
+.bar div.l {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+/* Bar ka khali track */
+.tr {
+  height: 10px;
+  background: #242424;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Bar ka bhara hua hissa (width JS se set hoti hai) */
+.fi {
+  height: 100%;
+  width: 0;
+  background: var(--g);
+  border-radius: 10px;
+  box-shadow: 0 0 12px var(--g);
+  transition: width 1.4s ease;
+}
+
+
+/* ---------------------------------------------------------------------
+   11. CONTACT SECTION & FORM
+   --------------------------------------------------------------------- */
+
+/* Do columns: left contact info, right form */
+.ct {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 48px;
+}
+
+/* Contact line (icon + text) */
+.cl {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 24px;
+  color: var(--mut);
+}
+
+.cl .ic {
+  margin: 0;
+  width: 52px;
+  height: 52px;
+  flex: none;
+  font-size: 1.2rem;
+}
+
+.cl a:hover {
+  color: var(--g);
+}
+
+/* Label (Email / Phone / Location) */
+.cl b {
+  display: block;
+  color: #fff;
+}
+
+form {
+  display: grid;
+  gap: 16px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 16px 20px;
+  background: var(--card);
+  border: 1px solid #2a2a2a;
+  border-radius: 14px;
+  color: #fff;
+  font: inherit;
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--g);
+}
+
+/* Form ka status message (Sending... / Thank you!) */
+#fm {
+  color: var(--g);
+  min-height: 24px;
+}
+
+
+/* ---------------------------------------------------------------------
+   12. FOOTER
+   --------------------------------------------------------------------- */
+
+footer {
+  border-top: 1px solid #222;
+  padding: 48px 0 28px;
+  text-align: center;
+}
+
+footer .logo {
+  display: inline-grid;
+  margin-bottom: 12px;
+}
+
+footer p {
+  color: var(--mut);
+}
+
+/* Footer menu links */
+footer ul {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 24px 0;
+  font-size: .85rem;
+}
+
+footer a:hover {
+  color: var(--g);
+}
+
+/* Copyright line */
+.cp {
+  font-size: .85rem;
+}
+
+
+/* ---------------------------------------------------------------------
+   13. SCROLL REVEAL ANIMATION
+   .rv = shuru mein hidden; JS jab "in" class lagata hai to fade-in hota hai
+   --------------------------------------------------------------------- */
+
+.rv {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: .8s;
+}
+
+.rv.in {
+  opacity: 1;
+  transform: none;
+}
+
+/* Jin users ne "reduce motion" on kiya ho unke liye animations band */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .rv {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+
+/* ---------------------------------------------------------------------
+   14. RESPONSIVE DESIGN (Tablet & Mobile)
+   --------------------------------------------------------------------- */
+
+/* Tablet (1024px tak) */
+@media (max-width: 1024px) {
+  .g4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .links {
+    gap: 18px;
+  }
+
+  .g3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Chota tablet / bara mobile (860px tak) */
+@media (max-width: 860px) {
+
+  /* Burger button show karo */
+  .burger {
+    display: block;
+  }
+
+  /* Menu header ke neeche dropdown ban jata hai (shuru mein hidden) */
+  .links {
+    position: absolute;
+    top: 72px;
+    left: 0;
+    right: 0;
+    background: #0d0d0d;
+    flex-direction: column;
+    gap: 0;
+    padding: 8px 24px 20px;
+    border-bottom: 1px solid #222;
+    display: none;
+  }
+
+  /* Burger click par JS "open" class lagata hai to menu show hota hai */
+  .links.open {
+    display: flex;
+  }
+
+  .links a {
+    display: block;
+    padding: 14px 0;
+  }
+
+  /* Hero, About, Contact: do columns ki jagah ek column */
+  .hero,
+  .ab,
+  .ct {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    text-align: center;
+    min-height: 0;
+  }
+
+  .hero p.d {
+    margin-inline: auto;
+  }
+
+  .btns {
+    justify-content: center;
+  }
+
+  /* Mobile par photo text ke upar aa jati hai */
+  .vis {
+    order: -1;
+    width: min(88%, 380px);
+  }
+
+  .ab .vw {
+    width: min(78%, 320px);
+  }
+
+  .ab {
+    text-align: center;
+  }
+}
+
+/* Mobile (640px tak) */
+@media (max-width: 640px) {
+  section {
+    padding: 72px 0;
+  }
+
+  /* Cards ek column mein */
+  .g3,
+  .g4 {
+    grid-template-columns: 1fr;
+  }
+
+  /* Skills mobile par 2 columns mein rahengi (upar wali rule ko override) */
+  .g4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tl {
+    padding-left: 28px;
+  }
+
+  .tl .it::before {
+    left: -37px;
+  }
+}
+
+
+/* ---------------------------------------------------------------------
+   15. 3D BACKGROUND (Spline) & EXTRAS
+   --------------------------------------------------------------------- */
+
+/* Poori screen ka fixed background (content ke peeche) */
+#sp {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: #0d0d0d;
+}
+
+/* 3D viewer shuru mein invisible, load hone par fade-in */
+#sp spline-viewer {
+  width: 100%;
+  height: 100%;
+  display: block;
+  opacity: 0;
+  transition: opacity 1.5s;
+}
+
+#sp.on spline-viewer {
+  opacity: 1;
+}
+
+/* 3D background ke upar halka dark overlay (text readable rakhne ke liye) */
+#sp::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(13, 13, 13, .45), rgba(13, 13, 13, .25) 50%, rgba(13, 13, 13, .5));
+}
+
+/* Cards ke peeche halka blur (glass effect) */
+.card {
+  backdrop-filter: blur(6px);
+}
+
+/* Skill level text (abhi use nahi ho raha) */
+.sk .lv {
+  color: var(--g);
+  font-weight: 600;
+  margin: 6px 0 0;
+}
+
+p{
+  /* text-align: justify; */
+  text-justify: inter-word;
+}
